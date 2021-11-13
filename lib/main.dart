@@ -26,6 +26,29 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.lightBlueAccent,
+        elevation: 0.0,
+        title: const Text(
+          'Prayer Time',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 50),
+              child: Text('Time display here'),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
