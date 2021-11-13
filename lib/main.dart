@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'data_service.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,10 @@ class MyHomePage extends StatefulWidget {
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
+
 }
+
+
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
@@ -44,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: const [
             Padding(
               padding: EdgeInsets.symmetric(vertical: 50),
-              child: Text('Time display here'),
+              child: Text('prayer time display here'),
             ),
           ],
         ),
@@ -52,3 +56,5 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+
