@@ -8,7 +8,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -22,10 +21,10 @@ class MyHomePage extends StatefulWidget {
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
-
 }
 
-
+final _cityTextController = TextEditingController();
+final _dataService = DataService();
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
@@ -45,10 +44,21 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 50),
-              child: Text('prayer time display here'),
+              padding: const EdgeInsets.symmetric(vertical: 50),
+              child: SizedBox(
+                width: 150,
+                child: TextField(
+                  controller: _cityTextController,
+                  decoration: const InputDecoration(labelText: 'City'),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            const ElevatedButton(
+              onPressed: _search,
+              child: Text('Search'),
             ),
           ],
         ),
@@ -56,5 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
+ void _search() {
+  _dataService.getPrayerTime(_cityTextController);
+ }
 
