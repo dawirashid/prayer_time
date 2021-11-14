@@ -1,8 +1,9 @@
 
 
-import 'package:http/http.dart' as convert;
+
 import 'dart:convert' as http;
 
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
 
 //https://api.aladhan.com/v1/timingsByCity?city=Kuala%20Lumpur&country=Malaysia&method=8
@@ -11,7 +12,9 @@ class DataService {
      
  void getPrayerTime(_cityTextController) async{
    final response = await get(Uri.parse(url));
-     print(response.body);
+     if (kDebugMode) {
+       print(response.body);
+     }
 
 
    }
