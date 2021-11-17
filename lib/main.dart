@@ -67,6 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
  void _search() {
-  _dataService.getPrayerTime(_cityTextController);
+  _dataService.getPrayerTime(_cityTextController.text);
  }
 
